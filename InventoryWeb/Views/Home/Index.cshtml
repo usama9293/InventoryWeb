@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 text-primary fw-bold">Welcome to Inventory Management System</h1>
+        <p class="lead text-muted">Manage your categories and items efficiently and easily.</p>
+
+        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-primary btn-lg mt-4">
+            View Categories
+        </a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Add New Category</h5>
+                    <p class="card-text">Create and manage product categories.</p>
+                    <a asp-controller="Category" asp-action="Create" class="btn btn-success">Add Category</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Edit Categories</h5>
+                    <p class="card-text">Update existing categories easily.</p>
+                    <a asp-controller="Category" asp-action="Index" class="btn btn-warning">Manage Categories</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Delete Categories</h5>
+                    <p class="card-text">Remove unwanted categories safely.</p>
+                    <a asp-controller="Category" asp-action="Index" class="btn btn-danger">Delete Category</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
