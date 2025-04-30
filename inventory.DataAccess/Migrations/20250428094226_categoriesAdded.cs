@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace InventoryWeb.Migrations
+namespace inventory.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class categoriesAdded : Migration

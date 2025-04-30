@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace InventoryWeb.Migrations
+namespace inventory.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class addcategorytabletodb : Migration

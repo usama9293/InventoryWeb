@@ -1,8 +1,8 @@
-﻿using InventoryWeb.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Inventory.Models;
 
 
-namespace InventoryWeb.Data
+namespace inventory.DataAccess.Data
 {
     public class AppDbContext:DbContext
     {
