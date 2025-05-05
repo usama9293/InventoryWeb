@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using inventory.DataAccess.Data;
 
@@ -10,9 +11,11 @@ using inventory.DataAccess.Data;
 namespace inventory.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250505071006_intialCreate")]
+    partial class intialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,10 +90,6 @@ namespace inventory.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -121,7 +120,6 @@ namespace inventory.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "A book on military strategy",
                             ISBN = "1234567890",
-                            ImageUrl = "",
                             Price = 120,
                             Price100 = 80,
                             Price50 = 100,
@@ -135,7 +133,6 @@ namespace inventory.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Dystopian novel by George Orwell",
                             ISBN = "2345678901",
-                            ImageUrl = "",
                             Price = 140,
                             Price100 = 90,
                             Price50 = 110,

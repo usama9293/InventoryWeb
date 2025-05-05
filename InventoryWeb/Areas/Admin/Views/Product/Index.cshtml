@@ -1,0 +1,50 @@
+﻿@using Inventory.Models
+@model List<Product>
+
+<partial name="_Notifications" />
+
+<div class="container mb-5">
+    <div class="row pt-5">
+        <div class="col-6">
+            <h2 class="text-primary">Product List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-patch-plus-fill"></i> Add New Product
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th style="min-width: 150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Title</td>
+                    <td>@product.Author</td>
+                    <td>@product.ISBN</td>
+                    <td>@product.Price.ToString("C")</td>
+                    <td>@product.Category?.Name</td>
+                    <td class="btn-group" role="group">
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary mx-1">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger mx-1">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

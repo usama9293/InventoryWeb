@@ -2,8 +2,9 @@ using System.Diagnostics;
 using Inventory.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InventoryWeb.Controllers
+namespace InventoryWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

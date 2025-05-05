@@ -16,5 +16,7 @@ namespace Inventory.Models
         [Required(ErrorMessage = "Description is required.")]
         [StringLength(200, MinimumLength = 5, ErrorMessage = "Description must be between 5 and 200 characters.")]
         public string Description { get; set; }
+        public ICollection<Product> Products { get; set; }
+
     }
 }
